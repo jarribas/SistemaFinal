@@ -1,5 +1,5 @@
 package easing.interpolator;
-//commit dev
+//commit dev 2
 /*
  *
  * Open source under the BSD License. 
