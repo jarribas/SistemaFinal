@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.panel"
+      android:versionCode="1"
+      android:versionName="1.0">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.VIBRATE" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> 
+  	  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> 
+  	  <uses-permission android:name="android.permission.CALL_PHONE"/>
+      
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+        <uses-library android:name="com.google.android.maps" />
+        <activity android:name=".Test"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service android:name="MyService"></service>
+<activity android:name=".Primero"></activity>
+<activity android:name=".Historial"></activity>
+<activity android:name=".Main"></activity>
+<activity android:name=".RoutePath"></activity>
+<activity android:name=".Ultima"></activity>
+<activity android:name=".Phonecall"></activity>
+    </application>
+</manifest> 

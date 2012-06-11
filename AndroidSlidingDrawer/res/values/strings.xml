@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AndroidSlidingDrawerActivity!</string>
+    <string name="app_name">AndroidSlidingDrawer</string>
+    <string name="stopService">STOP_SERVICE</string>
+    <string name="help">Help</string>
+
+</resources>

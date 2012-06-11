@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res/org.panel"
+    android:id="@+id/linearLayout2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <org.panel.Panel
+            android:id="@+id/topPanel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.36"
+            panel:animationDuration="1000"
+            panel:closedHandle="@drawable/top_switcher_collapsed_background"
+            panel:linearFlying="true"
+            panel:openedHandle="@drawable/top_switcher_expanded_background"
+            android:paddingBottom="2dip"
+            panel:position="top" >
+
+            <TableLayout
+                android:id="@id/panelContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:textSize="10dip" >
+
+                <TableRow>
+
+                    <Button
+                        android:id="@id/btnMedico"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/medico"
+                        android:text=" Historial Medico"
+                        android:textSize="10dip" />
+
+                    <Button
+                        android:id="@id/btnRuta"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/ruta"
+                        android:text="Calcular Ruta"
+                        android:textSize="10dip" />
+
+                    <Button
+                        android:id="@id/btnUltimo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/ultimo"
+                        android:text=" Ultima posicion"
+                        android:textSize="10dip" />
+                </TableRow>
+
+                <TableRow>
+
+                    <Button
+                        android:id="@id/btnConfigurar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/configurar"
+                        android:text="Configuracion"
+                        android:textSize="10dip" />
+
+                    <Button
+                        android:id="@id/btnUrgencia"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/urgencias"
+                        android:text="Urgencias"
+                        android:textSize="10dip" />
+
+                    <Button
+                        android:id="@id/btnAlcance"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableLeft="@drawable/alcance"
+                        android:text="Alcance"
+                        android:textSize="10dip" />
+                </TableRow>
+
+                <TableRow>
+
+                    <Button android:visibility="invisible" />
+
+                    <Button
+                        android:id="@id/btnVolver"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@drawable/volver"
+                        android:text=" Inicio"
+                        android:textSize="10dip" />
+
+                    <Button android:visibility="invisible" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@id/panelHandle"
+                android:layout_width="fill_parent"
+                android:layout_height="33dip" android:paddingBottom="2dip"/>
+        </org.panel.Panel>
+    </TableLayout>
+
+    <com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.72"
+        android:apiKey="0l5u3ikIwakT5TfCT87CbygovHf93bMLa2C4zjQ"
+        android:clickable="false" >
+
+    </com.google.android.maps.MapView>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+
+    <TextView
+        android:id="@+id/cont"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

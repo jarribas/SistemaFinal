@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:id="@+id/LinearLayout01" 
+			  android:layout_width="fill_parent"
+			  android:layout_height="fill_parent"
+			  android:orientation="vertical"
+  		      xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:id="@+id/LinearLayout02"
+				  android:layout_width="wrap_content" 
+				  android:layout_height="wrap_content"
+ 				  android:orientation="horizontal">
+
+		<TextView
+		    android:id="@+id/txtForEmail"
+		    android:layout_width="69dp"
+		    android:layout_height="wrap_content"
+		    android:text="   Para: " >
+</TextView>
+		<EditText android:layout_width="wrap_content"
+				  android:layout_height="wrap_content" 
+				  android:width="170dip" 
+				  android:inputType="textEmailAddress"				  
+				  android:id="@+id/etEmail">
+		</EditText>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout03"
+ 				  android:layout_width="wrap_content" 
+ 				  android:layout_height="wrap_content"
+ 				  android:orientation="horizontal">
+
+		<TextView
+		    android:id="@+id/txtForSubject"
+		    android:layout_width="69dp"
+		    android:layout_height="wrap_content"
+		    android:text="   Asunto: " >
+</TextView>
+
+		<EditText
+		    android:id="@+id/etSubject"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:width="170dip" >
+
+		</EditText>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout04"
+ 				  android:layout_width="wrap_content" 
+ 				  android:layout_height="wrap_content"
+ 				  android:orientation="horizontal">
+		<TextView android:text="   Mensaje: "
+			      android:layout_width="wrap_content" 
+			      android:layout_height="wrap_content"
+			       android:id="@+id/txtForBody"></TextView>
+		<EditText android:layout_width="wrap_content"
+ 			  android:layout_height="wrap_content" 
+ 			  android:lines="5" 
+ 			  android:width="300dip"
+			  android:id="@+id/etBody2">
+		</EditText>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout05"
+ 				  android:layout_width="wrap_content" 
+ 				  android:layout_height="wrap_content"
+ 				  android:orientation="horizontal" >
+	   <Button android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:id="@+id/btnSend"
+			android:text="Enviar"
+			android:imeOptions="actionSend"
+			android:width="150dip">
+	</Button> 
+	  
+	</LinearLayout>
+	
+</LinearLayout>

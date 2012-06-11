@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#DCDCDC"
+    >
+    
+  <com.google.android.maps.MapView
+      android:id="@+id/mapview_3"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="0.64"
+      android:apiKey="0l5u3ikIwakT5TfCT87CbygovHf93bMLa2C4zjQ"
+      android:clickable="false" />
+
+    <ZoomControls
+        android:id="@+id/zoomControls3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/last_dir"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03" android:clickable="false" android:focusable="false" android:focusableInTouchMode="false" android:gravity="center_horizontal"/>
+    
+</LinearLayout>

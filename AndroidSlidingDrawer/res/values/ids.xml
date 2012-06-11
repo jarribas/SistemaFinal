@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <item type="id" name="panelHandle" />
+  <item type="id" name="panelContent" />
+  <item type="id" name="btnMedico" />
+  <item type="id" name="btnRuta" />
+  <item type="id" name="btnUltimo" />
+  <item type="id" name="btnConfigurar" />
+  <item type="id" name="btnUrgencia" />
+  <item type="id" name="btnAlcance" />
+   <item type="id" name="btnVolver" /> 
+</resources>

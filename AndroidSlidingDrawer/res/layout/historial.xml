@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout06"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Nombre: " />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="195dp"
+            android:layout_height="fill_parent"
+            android:gravity="left" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo: " />
+
+        <EditText
+            android:id="@+id/etSexo"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent" android:maxLength="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dirección: " />
+
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout07"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.61"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtForBody"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:text="Historial Medico: " />
+
+        <EditText
+            android:id="@+id/etBody"
+            android:layout_width="fill_parent"
+            android:layout_height="195dp"
+            android:gravity="top"
+            android:width="300dip" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayout05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSend"
+                android:text="Enviar"
+                android:width="150dip" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSend"
+                android:onClick="grabar"
+                android:text="Guardar"
+                android:width="150dip" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnRuta"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:text="Ruta" />
+
+    </LinearLayout>
+
+</LinearLayout>
