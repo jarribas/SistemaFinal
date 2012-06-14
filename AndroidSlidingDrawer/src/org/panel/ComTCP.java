@@ -64,7 +64,9 @@ public class ComTCP implements InterfaceCommPulsera {
 		    	   //DataOutputStream dos = new DataOutputStream(sckt.getOutputStream()); 
 		    	 
 		    	   
-		    	   // Leemos datos de la peticion \
+		    	   // Leemos datos de la peticion 
+				//la=dis.readInt();
+				//lo=dis.readInt();
 		    	  la = la - 5000;
 					lo = lo + 5000;	 
 				 pos.setLat(la);
