@@ -21,6 +21,7 @@ public class ComTCP implements InterfaceCommPulsera {
 	DataOutputStream dos = null;
 
 	ServerSocket ss = null; 
+	Socket sckt = null;
 	String IP = "";
 	int port = 1233;
 	long ack;
@@ -32,16 +33,16 @@ public class ComTCP implements InterfaceCommPulsera {
 
 	public void startServer() {
 		
-	   	/* try
-	   		{
+	   	// try
+	   		//{
 	   			//ss = new ServerSocket(port);
-	   		//ss = new ServerSocket(port);
-	   			
-	   	    } catch (IOException ioe)
-	   		  { 
+	   					 Log.d("Server", "newserversocket");
+	   					 
+	   	   // } catch (IOException ioe)
+	   		 // { 
 	   			  //System.err.println("Error al abrir el socket de servidor : " + ioe); 
 
-	   	      } */
+	   	      //}
 		
 	}
 
@@ -53,9 +54,11 @@ public class ComTCP implements InterfaceCommPulsera {
 		//while (true){	
 			try{ 
 				Log.d("Server", "bloqueado");
-		    	   // Esperamos a que alguien se conecte a nuestro Socket		    	 
-		    	  //	Socket sckt = ss.accept(); 
+		    	   // Esperamos a que alguien se conecte a nuestro Socket	
+				if(sckt==null){
+		    	  	//sckt = ss.accept(); 
 		    	   Log.d("Server", "conexaceptada");
+				}
 		    	   // Extraemos los Streams de entrada y de salida 
 		    	   //DataInputStream dis = new DataInputStream(sckt.getInputStream()); 
 		    	   //DataOutputStream dos = new DataOutputStream(sckt.getOutputStream()); 
