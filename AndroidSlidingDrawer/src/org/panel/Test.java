@@ -54,13 +54,14 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	ItemizedOverlay itemizedOverlay;
 	
 	
+
 	MapController mc;
     GeoPoint p;
     int zoomLevel = 12;
     TextView text;
     Vibrator v;
     private NotificationManager notificationMgr;
-    
+    private Button btnSatelite = null;
     Context contexto;
 	
 		public void onCreate(Bundle savedInstanceState)
@@ -73,7 +74,8 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			       text = (TextView) findViewById(R.id.cont);
 			    // Get instance of Vibrator from current Context
 				   v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-					 
+				   btnSatelite = (Button)findViewById(R.id.BtnSatelite); 
+ 
 					
 			        
 			       mapView = (MapView) findViewById(R.id.mapview);
@@ -92,6 +94,17 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			                        mc.zoomOut();
 			                }
 			        });
+			        
+			        btnSatelite.setOnClickListener(new OnClickListener() {
+			    		
+						public void onClick(View arg0) {
+							if(mapView.isSatellite())
+								mapView.setSatellite(false);
+							else
+								mapView.setSatellite(true);
+						}
+					});
+
 			        
 			        GeoPoint point = new GeoPoint(43270612,-2496943);
 			        mc.animateTo(point);

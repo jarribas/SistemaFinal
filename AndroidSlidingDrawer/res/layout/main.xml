@@ -4,6 +4,7 @@
     android:id="@+id/linearLayout2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center"
     android:orientation="vertical" >
 
     <TableLayout
@@ -83,22 +84,8 @@
                         android:text="Alcance"
                         android:textSize="10dip" />
                 </TableRow>
-
-                <TableRow>
-
-                    <Button android:visibility="invisible" />
-
-                    <Button
-                        android:id="@id/btnVolver"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_gravity="center"
-                        android:drawableLeft="@drawable/volver"
-                        android:text=" Inicio"
-                        android:textSize="10dip" />
-
-                    <Button android:visibility="invisible" />
-                </TableRow>
+ 
+                
             </TableLayout>
 
             <Button
@@ -116,17 +103,33 @@
         android:apiKey="0l5u3ikIwakT5TfCT87CbygovHf93bMLa2C4zjQ"
         android:clickable="false" >
 
-    </com.google.android.maps.MapView> 
-
-<ZoomControls
-        android:id="@+id/zoomControlsMain"
+    </com.google.android.maps.MapView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible" android:gravity="center_horizontal" android:layout_gravity="center_horizontal"/>
+        android:gravity="center|right"
+        android:orientation="horizontal" >
 
+        <Button
+            android:id="@+id/BtnSatelite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satelite" />
+
+        <ZoomControls
+            android:id="@+id/zoomControlsMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/cont"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
