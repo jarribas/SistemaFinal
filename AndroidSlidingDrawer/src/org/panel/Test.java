@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ZoomControls;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -76,10 +77,22 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 					
 			        
 			       mapView = (MapView) findViewById(R.id.mapview);
-			        mapView.setBuiltInZoomControls(true);
+			        //mapView.setBuiltInZoomControls(true);
 			        
 			        mc = mapView.getController();
 			         
+			        ZoomControls zoomControls = (ZoomControls) findViewById(R.id.zoomControlsMain);
+			        zoomControls.setOnZoomInClickListener(new View.OnClickListener() {
+			                public void onClick(View v) {
+			                        mc.zoomIn();
+			                }
+			        });
+			        zoomControls.setOnZoomOutClickListener(new View.OnClickListener() {
+			                public void onClick(View v) {
+			                        mc.zoomOut();
+			                }
+			        });
+			        
 			        GeoPoint point = new GeoPoint(43270612,-2496943);
 			        mc.animateTo(point);
 			        mc.setZoom(zoomLevel);

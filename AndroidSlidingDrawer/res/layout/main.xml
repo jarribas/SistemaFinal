@@ -116,12 +116,13 @@
         android:apiKey="0l5u3ikIwakT5TfCT87CbygovHf93bMLa2C4zjQ"
         android:clickable="false" >
 
-    </com.google.android.maps.MapView>
+    </com.google.android.maps.MapView> 
 
-    <TextView
-        android:layout_width="fill_parent"
+<ZoomControls
+        android:id="@+id/zoomControlsMain"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:visibility="visible" android:gravity="center_horizontal" android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/cont"
