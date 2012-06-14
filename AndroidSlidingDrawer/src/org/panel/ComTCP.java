@@ -23,7 +23,7 @@ public class ComTCP implements InterfaceCommPulsera {
 	ServerSocket ss = null; 
 	Socket sckt = null;
 	String IP = "";
-	int port = 1233;
+	int port = 5554;
 	long ack;
 	int la = 43269612,lo = -2496943;
 	
@@ -33,16 +33,16 @@ public class ComTCP implements InterfaceCommPulsera {
 
 	public void startServer() {
 		
-	   	// try
-	   		//{
-	   			//ss = new ServerSocket(port);
-	   					 Log.d("Server", "newserversocket");
+	   	try
+	   		{
+	   			ss = new ServerSocket(port);
+	   					
 	   					 
-	   	   // } catch (IOException ioe)
-	   		 // { 
-	   			  //System.err.println("Error al abrir el socket de servidor : " + ioe); 
+	   	    } catch (IOException ioe)
+	   		{ 
+	   	    	System.err.println("Error al abrir el socket de servidor : " + ioe); 
 
-	   	      //}
+	   	      }
 		
 	}
 
@@ -62,12 +62,7 @@ public class ComTCP implements InterfaceCommPulsera {
 		    	   // Extraemos los Streams de entrada y de salida 
 		    	   //DataInputStream dis = new DataInputStream(sckt.getInputStream()); 
 		    	   //DataOutputStream dos = new DataOutputStream(sckt.getOutputStream()); 
-		    	   // Podemos extraer informacion del socket 
-		    	   // Numero de puerto remoto 
-		    	   //int puerto = sckt.getPort(); 
 		    	 
-		    	   // Direccion de Internet remota 
-		    	   //InetAddress direcc = sckt.getInetAddress(); 
 		    	   
 		    	   // Leemos datos de la peticion \
 		    	  la = la - 5000;
