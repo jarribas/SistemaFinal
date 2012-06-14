@@ -3,7 +3,7 @@ package org.panel;
 public class ComSMS implements InterfaceCommPulsera  {
 	
 		public ComSMS() {
-			
+			//cuerpo
 		}
 
 		public void startServer() {
