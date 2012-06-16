@@ -62,6 +62,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
     Vibrator v;
     private NotificationManager notificationMgr;
     private Button btnSatelite = null;
+    private Button btnSalir = null;
     Context contexto;
 	
 		public void onCreate(Bundle savedInstanceState)
@@ -75,6 +76,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			    // Get instance of Vibrator from current Context
 				   v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				   btnSatelite = (Button)findViewById(R.id.BtnSatelite); 
+				   btnSalir = (Button)findViewById(R.id.BtnSalir); 
  
 					
 			        
@@ -102,6 +104,13 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 								mapView.setSatellite(false);
 							else
 								mapView.setSatellite(true);
+						}
+					});
+			        
+			        btnSalir.setOnClickListener(new OnClickListener() {
+			    		
+						public void onClick(View arg0) {
+							System.exit(0);
 						}
 					});
 
