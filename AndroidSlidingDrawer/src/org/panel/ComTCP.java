@@ -88,13 +88,13 @@ public class ComTCP implements InterfaceCommPulsera {
                 
 				
 		    	   // Leemos datos de la peticion 
-                 inMsg = input.readLine();
-                 coordenadas=inMsg.split(",");               
-                 //latitud=coordenadas[0];
-                 //longitud=coordenadas[1];
+                inMsg = input.readLine();
+                coordenadas=inMsg.split(",");               
                 
-                 la = Integer.parseInt(coordenadas[0]);
-                 lo = Integer.parseInt(coordenadas[1]);
+                
+                la = Integer.parseInt(coordenadas[0]);
+                lo = Integer.parseInt(coordenadas[1]);
+                 
 				//la=dis.readInt();
 				//lo=dis.readInt();
 		    	  //la = la - 5000;
@@ -130,7 +130,7 @@ public class ComTCP implements InterfaceCommPulsera {
 
 		try{
 			ss.close();
-			sckt.close();
+			//sckt.close();
 			if(ss!=null){
    				sstate.setDestroyedOK(true);
    			}else{
