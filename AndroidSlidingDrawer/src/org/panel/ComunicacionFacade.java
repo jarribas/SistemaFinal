@@ -1,8 +1,11 @@
 package org.panel;
 
-
-
-
+/** 
+* Clase Facade en la que se define la comunicacion deseada. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class ComunicacionFacade {
 	
 	InterfaceCommPulsera com;

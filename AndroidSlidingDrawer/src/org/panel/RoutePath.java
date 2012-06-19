@@ -41,7 +41,12 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
-
+/** 
+* Clase que se ocupa de mostrar la ruta desde la posición del vigilante hasta la ultima posicion conocida del vigilado. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/ 
 
 public class RoutePath extends MapActivity implements Runnable {
 	/** Called when the activity is first created. */
@@ -169,6 +174,10 @@ public class RoutePath extends MapActivity implements Runnable {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	/**
+	 * Metodo para obtener la posición GPS del usuario del móvil.
+	 */
     private void writeSignalGPS() {
     	
     	DialogInterface.OnCancelListener dialogCancel = new DialogInterface.OnCancelListener() {
@@ -240,6 +249,13 @@ public class RoutePath extends MapActivity implements Runnable {
 	            // TODO Auto-generated method stub
 	        }
 	    } 
+	 /**
+	  * Funcion para el dibujo.
+	  * @param  src La coordenada de origen (usuario vigilante).
+	  * @param dest La coordenada de destino (usuario vigilado).
+	  * @param color El color de la ruta.
+	  * @param mMapView01 El mapa.
+	  */
 	private void DrawPath(GeoPoint src, GeoPoint dest, int color,
 			MapView mMapView01) {
 

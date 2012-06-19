@@ -18,9 +18,12 @@ import android.view.View;
 
 import android.widget.LinearLayout;
 import android.widget.ZoomControls;
-
-
-
+/** 
+* Clase que se ocupa de mostrar el mapa de la pantalla de Alcance. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/ 
 public class Primero extends MapActivity {
     // Called when the activity is first created. 
 	LinearLayout linearLayout;

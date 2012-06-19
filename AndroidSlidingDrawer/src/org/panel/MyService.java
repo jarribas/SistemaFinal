@@ -11,7 +11,12 @@ import android.os.Message;
 import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
-
+/** 
+* Clase que se ocupa de la comunicacion con la pulsera.  
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class MyService extends Service {
 
 	private Timer timer = new Timer();
@@ -46,7 +51,9 @@ public class MyService extends Service {
 		fac.stopServer();
 		_shutdownService();
 	}
-	
+	/*
+	 * Inicio de la tarea para refrescar la posicion.
+	 */
 	private void _startService() {
 		timer.scheduleAtFixedRate(
 			new TimerTask() {
@@ -56,6 +63,7 @@ public class MyService extends Service {
 					Posicion pos= fac.updateCoordenadas();
 					la=pos.getLat();
 					lo=pos.getLon();
+					
 					//la = la - 5000;
 					//lo = lo + 5000;	
 					Log.d("Lat", Integer.toString(la));

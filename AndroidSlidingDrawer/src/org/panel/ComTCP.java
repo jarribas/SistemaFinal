@@ -12,10 +12,12 @@ import java.net.Socket;
 
 import android.util.Log;
 
-
-
-
-
+/** 
+* Clase perteneciente al Facade para la comunicacion por TCP. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class ComTCP implements InterfaceCommPulsera {
 	
 
@@ -33,6 +35,7 @@ public class ComTCP implements InterfaceCommPulsera {
 	String inMsg;
 	int la = 43269612,lo = -2496943;
 	//int la = 0,lo = 0;
+	int dentro=0;
 	
 	 String latitud;
      String longitud;
@@ -72,11 +75,22 @@ public class ComTCP implements InterfaceCommPulsera {
 		//while (true){	
 			try{ 
 				//Log.d("Server", "bloqueado");
-		    	   // Esperamos a que alguien se conecte a nuestro Socket	
+		    	   // Esperamos a que alguien se conecte a nuestro Socket
+				
+				
 				if(sckt==null){
+					
 		    	  	sckt = ss.accept(); 
+		    	  	 pos.setLat(la);
+					 pos.setLon(lo);
 		    	  // Log.d("Server", "conexaceptada");
 				}else{
+					
+			  
+					
+					
+					
+					
 		    	   // Extraemos los Streams de entrada y de salida 
 		    	   //DataInputStream dis = new DataInputStream(sckt.getInputStream()); 
 		    	   //DataOutputStream dos = new DataOutputStream(sckt.getOutputStream()); 
@@ -91,16 +105,21 @@ public class ComTCP implements InterfaceCommPulsera {
                 inMsg = input.readLine();
                 coordenadas=inMsg.split(",");               
                 
-                
+                if (coordenadas!=null){
                 la = Integer.parseInt(coordenadas[0]);
-                lo = Integer.parseInt(coordenadas[1]);
-                 
+                lo = Integer.parseInt(coordenadas[1]);  
+               
+                }
+                	 
+                
+                
+                pos.setLat(la);
+			    pos.setLon(lo);
 				//la=dis.readInt();
 				//lo=dis.readInt();
 		    	  //la = la - 5000;
 				 // lo = lo + 5000;	 
-				 pos.setLat(la);
-			     pos.setLon(lo);
+				 
 			     
 			   //Log.d("lat", String.valueOf(la));
 			   //Log.d("lon", String.valueOf(lo));
@@ -114,12 +133,18 @@ public class ComTCP implements InterfaceCommPulsera {
 		    	   // Cerramos los streams 
 		    	 //dis.close(); 
 		    	  // dos.close(); 
-		    	 
-		    	   //sckt.close(); 
-				}
+					}
+					
+				
 		    	   }//end try
 		    		 catch(Exception e)
 		    		 { 
+		    			 
+		    			 pos.setLat(la);
+						 pos.setLon(lo);
+						 sckt=null;
+						 
+						 
 		    			//tost("Se ha producido la excepcion : " +e); 
 		    		 }
 	    	  return pos;
@@ -130,7 +155,7 @@ public class ComTCP implements InterfaceCommPulsera {
 
 		try{
 			ss.close();
-			//sckt.close();
+			sckt.close();
 			if(ss!=null){
    				sstate.setDestroyedOK(true);
    			}else{

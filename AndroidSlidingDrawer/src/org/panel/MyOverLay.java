@@ -18,7 +18,12 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView; 
 import com.google.android.maps.Overlay; 
 import com.google.android.maps.Projection; 
-
+/** 
+* Clase que se ocupa de mostrar el marcador.  
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class MyOverLay extends Overlay 
 { 
   private GeoPoint gp1;

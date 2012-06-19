@@ -40,8 +40,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
-
-
+/** 
+* Clase que muestra la ultima posicion conocida del paciente. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/ 
 public class Ultima extends MapActivity {
 	 // Called when the activity is first created. 
 		LinearLayout linearLayout;
@@ -251,7 +255,12 @@ public class Ultima extends MapActivity {
 	    protected boolean isRouteDisplayed() {
 	        return false;
 	    }*/
-	    
+	    /**
+	     * Metodo que busca un archivo en el sistema de ficheros del móvil.
+	     * @param archivos Los archivos del móvil.
+	     * @param archbusca Nombre del archivo a buscar
+	     * @return true si existe, false si no existe.
+	     */
 	    private boolean existe(String[] archivos,String archbusca)
 	    {
 	        for(int f=0;f<archivos.length;f++)

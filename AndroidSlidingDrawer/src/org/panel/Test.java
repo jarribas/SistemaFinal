@@ -44,7 +44,12 @@ import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-
+/** 
+* Clase Main de la aplicacion, muestra la pantalla principal. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/ 
 public class Test extends MapActivity implements ServiceUpdateUIListener{
 		/** Called when the activity is first created. */
 	LinearLayout linearLayout;
@@ -197,17 +202,21 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	        	stopApplication();
 	            return true;
 	        case R.id.help:
-	            alertRegister();
+	            //alertRegister();
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	        }
 	    }
-		
+	    /**
+		 * Realiza el refresco en la pantalla. 
+		 * @param la La latitud.
+		 * @param lo La longitud.
+		 */
 		public void update(int la, int lo) {
 			
 		GeoPoint pp = new GeoPoint( la, lo );//43269692,-24969431
-			
+		
 			OverlayItem overlayitem1 = new OverlayItem(pp, "", "");
 			itemizedOverlay = new ItemizedOverlay(drawable);
 			itemizedOverlay.addOverlay(overlayitem1);
@@ -255,6 +264,9 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			stopService(svc);
 	    }
 	    
+	    /**
+		 * Dibuja el radio establecido en el mapa.
+		 */
 	    public void dibujarRadio(){
 	    	 String []archivos=fileList();
 		        String palabra;
@@ -317,8 +329,13 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	                return true;
 	        return false;
 	    }
-
-public void calculateDistance(int la, int lo){  
+	    
+	    /**
+		 * Calcula la distancia desde el centro hasta la posicion recibida.  
+		 * @param la La latitud.
+		 * @param lo La longitud.
+		 */
+	    public void calculateDistance(int la, int lo){  
 	    	
 	    	
 	    	String []archivos=fileList();
@@ -399,14 +416,14 @@ public void calculateDistance(int la, int lo){
 				 toast.show();
 				// Vibrate for 300 milliseconds
 				 v.vibrate(3000);
-				 alertRegister();
+				 //alertRegister();
 			 }
 			 
 			    /*Toast toast = Toast.makeText(mapView.getContext(), msg, Toast.LENGTH_SHORT);
 			    toast.show();*/
 
 	      }  
-		private void alertRegister(){
+		/*private void alertRegister(){
 			notificationMgr =(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 			displayNotificationMessage("Mensaje del Localizador");
 		}
@@ -419,7 +436,7 @@ public void calculateDistance(int la, int lo){
 			notification.setLatestEventInfo(this, "Vigilado esta fuera del area de alcance", message, contentIntent);
 	
 			notificationMgr.notify(R.string.hello, notification);
-		}
+		}*/
 		
 		private void stopApplication(){
 			stopService();

@@ -33,7 +33,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+/** 
+* Clase que se ocupa de mostrar el marcador y realizar la accion correspondiente al clickar en la pantalla.  
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 	
 	 
@@ -64,7 +69,11 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 	    populate();
 	}
 	
-	
+	/**
+	 *     Metodo que realiza el click en la pantalla
+	 *     @param point La coordenada del click.
+	 *     @param mapView El mapa en el que se ha realizado el click. 
+	 */
 	public boolean onTap(GeoPoint point, MapView mapView)
 	{
 		

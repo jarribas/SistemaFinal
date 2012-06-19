@@ -18,7 +18,13 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 import com.google.android.maps.Projection;
-
+/** 
+* Clase que se ocupa mediante el metodo draw de pintar el radio. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
+ 
 public class OverlayMapa extends Overlay {
 	
 	
@@ -44,10 +50,12 @@ private int radio;
 		}
 
 
-
-
-
-
+		/**
+		 * Funcion para el dibujo.
+		 * @param  canvas El objeto que contiene el metodo de dibujo.
+		 * @param shadow El sombreado.
+		 * @param mapv El mapa.
+		 */
 		public void draw(Canvas canvas, MapView mapv, boolean shadow){
 	        super.draw(canvas, mapv, shadow);
 

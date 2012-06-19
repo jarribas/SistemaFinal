@@ -12,7 +12,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+/** 
+* Clase que se ocupa del envio de mails.   
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class Main extends Activity {	
     /** Called when the activity is first created. */
 	private EditText etBody2;

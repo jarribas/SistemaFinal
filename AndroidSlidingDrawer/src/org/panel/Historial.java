@@ -14,6 +14,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+/** 
+* Clase que muestra y guarda el historial del paciente.  
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 
 public class Historial extends Activity {	
     /** Called when the activity is first created. */
@@ -90,6 +96,10 @@ public class Historial extends Activity {
 });*/
 
     }
+    
+    /**
+    * Guarda los datos en un fichero de texto.
+    */
     public void grabar(View v) {
         try {
         	String texto =new String(etNombre.getText().toString()+"\r\n"+etSexo.getText().toString()+"\r\n"+etDireccion.getText().toString()+"\r\n"+etBody.getText().toString());

@@ -15,7 +15,12 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.LinearLayout;
-
+/** 
+* Clase que se ocupa del panel del menu principal. 
+* @author Jon Arribas
+* @author Javier Martin
+* @version 1.0, 13/06/2012
+*/
 public class Panel extends LinearLayout
 	{
 
