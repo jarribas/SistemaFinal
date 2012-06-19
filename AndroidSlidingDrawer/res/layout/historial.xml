@@ -107,11 +107,6 @@
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/btnRuta"
-            android:layout_width="102dp"
-            android:layout_height="wrap_content"
-            android:text="Ruta" />
 
     </LinearLayout>
 

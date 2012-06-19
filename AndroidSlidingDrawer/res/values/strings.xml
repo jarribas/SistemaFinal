@@ -5,5 +5,10 @@
     <string name="app_name">AndroidSlidingDrawer</string>
     <string name="stopService">STOP_SERVICE</string>
     <string name="help">Help</string>
+    <string name="gps_signal_not_found">Señal de GPS no encontrada. Compruebe el estado del GPS</string>
+	<string name="gps_signal_found">Señal de GPS encontrada correctamente</string>
+	<string name="search">Buscando...</string>
+	<string name="search_signal_gps">Buscando señal GPS</string>
+	<string name="btsearch">Buscar posicion GPS</string>
 
 </resources>
