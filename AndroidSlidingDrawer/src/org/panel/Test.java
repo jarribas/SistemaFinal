@@ -193,6 +193,8 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	        inflater.inflate(R.menu.menu, menu);
 	        return true;
 	    }
+		
+		
 	    
 	    @Override
 	    public boolean onOptionsItemSelected(MenuItem item) {
@@ -421,8 +423,15 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			 
 			    /*Toast toast = Toast.makeText(mapView.getContext(), msg, Toast.LENGTH_SHORT);
 			    toast.show();*/
-
+ 
 	      }  
+	     
+	   /* protected void onResume()
+		{
+		   super.onResume();
+		  // mapOverlays.remove(mapOverlays.size());
+		   dibujarRadio();
+		}*/
 		/*private void alertRegister(){
 			notificationMgr =(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 			displayNotificationMessage("Mensaje del Localizador");
