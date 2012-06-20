@@ -84,44 +84,6 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 	   
 	    
 	    showAddDialog(contexto, point, mapView);
-	    
-	    //mapOverlays.add(new OverlayMapa(punto));
-	    
-	    /*mapOverlays = mapView.getOverlays();
-	    mapOverlays.clear();
-	    drawable = contexto.getResources().getDrawable(R.drawable.androidmarker);
-        itemizedOverlay = new ItemizedOverlay(drawable);
-        punto = new GeoPoint(point.getLatitudeE6(),point.getLongitudeE6());
-        OverlayItem overlayitem = new OverlayItem(punto, "", "");
-        
-        
-        itemizedOverlay.addOverlay(overlayitem);
-      
-        mapOverlays.add(itemizedOverlay);
-        Log.d("Estoy fuera de mapoverlays", "");*/
-	    
-        //mapOverlays.add(new OverlayMapa(punto));
-	    
-	    
-	    /*String msg = "Lat: " + point.getLatitudeE6()/1E6 + " - " +
-	        "Lon: " + point.getLongitudeE6()/1E6;
-	 
-	    Toast toast = Toast.makeText(contexto, msg, Toast.LENGTH_SHORT);
-	    toast.show();
-	   
-	    mapOverlays = mapView.getOverlays();
-	    mapOverlays.clear();
-	    drawable = contexto.getResources().getDrawable(R.drawable.androidmarker);
-        itemizedOverlay = new ItemizedOverlay(drawable);
-        punto = new GeoPoint(point.getLatitudeE6(),point.getLongitudeE6());
-        OverlayItem overlayitem = new OverlayItem(punto, "", "");
-        
-        
-        itemizedOverlay.addOverlay(overlayitem);
-      
-        mapOverlays.add(itemizedOverlay);
-        
-        mapOverlays.add(new OverlayMapa(punto));  */
         
 	    return true;
 	}
@@ -146,11 +108,10 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 		.findViewById(R.id.cancel_button);
 
 		addButton.setOnClickListener(new OnClickListener() {
-		// @Override
+		
 		public void onClick(View v) {
 
-		//Toast.makeText(contexto, "Please enter Number.",
-		//Toast.LENGTH_LONG).show();
+		
 			loginDialog.dismiss();
 			 String msg = "Lat: " + point.getLatitudeE6()/1E6 + " - " +
 				        "Lon: " + point.getLongitudeE6()/1E6;
@@ -164,59 +125,19 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 			        itemizedOverlay = new ItemizedOverlay(drawable);
 			        punto = new GeoPoint(point.getLatitudeE6(),point.getLongitudeE6());
 			        OverlayItem overlayitem = new OverlayItem(punto, "", "");
-			         
-			        
+			        			        
 			        itemizedOverlay.addOverlay(overlayitem);
-			      
 			        mapOverlays.add(itemizedOverlay);
-				   
-				    //mapOverlays.add(new OverlayMapa(punto));
 				    mapView.invalidate();
 				    
 				   
-				    
-				    /*try
-					{
-					    OutputStreamWriter fout=
-					        new OutputStreamWriter(
-					            contexto.openFileOutput("notas.txt", contexto.MODE_PRIVATE));
-					 
-					    fout.write("Latitud.:"+punto.getLatitudeE6()+"\n");
-					    fout.write("Longitud.:"+punto.getLongitudeE6()+"\n");
-					    fout.close();
-					}
-					catch (Exception ex)
-					{
-					    Log.e("Ficheros", "Error al escribir fichero a memoria interna");
-					}*/
-			       
-			       
-				    
-				   //loginDialog.show();
 				    showRadiusDialog(contexto, punto, mapView);
 				  
-				    
-				   /* mapOverlays = mapView.getOverlays();
-				    mapOverlays.clear();
-				    drawable = contexto.getResources().getDrawable(R.drawable.androidmarker);
-			        itemizedOverlay = new ItemizedOverlay(drawable);
-			        punto = new GeoPoint(point.getLatitudeE6(),point.getLongitudeE6());
-			        OverlayItem overlayitem = new OverlayItem(punto, "", "");
-			        
-			        
-			        itemizedOverlay.addOverlay(overlayitem);
-			      
-			        mapOverlays.add(itemizedOverlay);
-			        Log.d("Estoy fuera de mapoverlays", "");*/
-			        //mapOverlays.add(new OverlayMapa(punto));  
-			        
-			        
-			        
 		}
 		});
 
 		cancelButton.setOnClickListener(new OnClickListener() {
-		// @Override
+		
 		public void onClick(View v) {
 			loginDialog.dismiss();
 			
@@ -250,22 +171,8 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 		public void onClick(View v) {
 			EditText radio;
 			radio=(EditText) dialogView.findViewById(R.id.uname_id);
-			
-		
+	
 			radiusDialog.dismiss();
-			 /*String msg = "Lat: " + point.getLatitudeE6()/1E6 + " - " +
-				        "Lon: " + point.getLongitudeE6()/1E6;
-				 
-				    Toast toast = Toast.makeText(contexto, msg, Toast.LENGTH_SHORT);
-				    toast.show();*/
-			/*try {
-	            OutputStreamWriter archivo = new OutputStreamWriter(contexto.openFileOutput("notas.txt",Activity.MODE_PRIVATE));
-	            archivo.write(radio.toString());
-	            archivo.flush();
-	            archivo.close();            
-	        }catch (IOException e)
-	        {
-	        }*/
 			
 			try
 			{
@@ -273,9 +180,6 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 			        new OutputStreamWriter(
 			            contexto.openFileOutput("radio.txt", contexto.MODE_PRIVATE));
 			 
-			    //fout.write("Latitud.:"+punto.getLatitudeE6()+"\n");
-			    //fout.write("Longitud.:"+punto.getLongitudeE6()+"\n");
-			    //fout.write("\nRadio:"+Integer.parseInt(radio.getText().toString()));
 			    fout.write(punto.getLatitudeE6()+" "+punto.getLongitudeE6()+" "+Integer.parseInt(radio.getText().toString()));
 			    fout.close();
 			}
@@ -286,26 +190,18 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 			
 				    
 					mapOverlays.add(new OverlayMapa(punto,Integer.parseInt(radio.getText().toString())));
-				   
-				    //mapOverlays.add(new OverlayMapa(punto));
 				    mapView.invalidate();
 				    
 		}
 		});
 
 		cancelButton.setOnClickListener(new OnClickListener() {
-		// @Override
+		
 		public void onClick(View v) {
 			radiusDialog.dismiss();
-			
-		
 		}
 		});
 
 		}
-	
-	
-
-
 	
 }

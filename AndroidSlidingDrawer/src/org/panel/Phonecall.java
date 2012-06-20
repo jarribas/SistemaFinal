@@ -21,7 +21,7 @@ public class Phonecall extends Activity {
     }
 /** 
 * Funcion de la llamada.
-*/
+*/ 
 private void call() {
     try {
         Intent callIntent = new Intent(Intent.ACTION_CALL);

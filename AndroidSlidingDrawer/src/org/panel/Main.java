@@ -32,15 +32,10 @@ public class Main extends Activity {
         Bundle bundle = getIntent().getExtras();
         etBody2.setText(bundle.getString("NOMBRE"));
         
-        //etBody=(EditText)findViewById(R.id.etBody);
-       /* etBody2=(EditText)findViewById(R.id.etBody2);
-        Bundle bundle = getIntent().getExtras();
-        
-        etBody2.setText("Hola " + bundle.getString("NOMBRE"));*/
        
         btnSend.setOnClickListener(new OnClickListener() {                      
 						public void onClick(View v) {
-							/* obtenemos los datos para el envío del correo */
+							/* obtenemos los datos para el envio del correo */
 					        EditText etEmail = (EditText) findViewById(R.id.etEmail);
 					        EditText etSubject = (EditText) findViewById(R.id.etSubject);
 					        EditText etBody2 = (EditText) findViewById(R.id.etBody2);					        		        
@@ -48,7 +43,7 @@ public class Main extends Activity {
                             Intent itSend = new Intent(android.content.Intent.ACTION_SEND);                            
                             /* vamos a enviar texto plano a menos que el checkbox esté marcado */
                             itSend.setType("plain/text");                            
-                            /* colocamos los datos para el envío */
+                            /* colocamos los datos para el envio */
                             itSend.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{ etEmail.getText().toString()});                            
                             itSend.putExtra(android.content.Intent.EXTRA_SUBJECT, etSubject.getText().toString());
                             itSend.putExtra(android.content.Intent.EXTRA_TEXT, etBody2.getText());                          

@@ -60,24 +60,20 @@ private int radio;
 	        super.draw(canvas, mapv, shadow);
 
 	        Projection projection = mapv.getProjection();
-			/*GeoPoint geoPoint = 
-				new GeoPoint(latitud.intValue(), longitud.intValue());*/
+
 			
 			if (shadow == false) 
 			{
 				Point centro = new Point();
 				projection.toPixels(punto, centro);
 
-				 //Log.d("POINTS on click-->",""+punto.getLatitudeE6()+", "+punto.getLongitudeE6());
-	                //Log.d("##","Moved and Clicked");
 				//Definimos el pincel de dibujo
 				Paint p = new Paint();
 				p.setColor(Color.BLUE);
-				//p.setStyle(Paint.Style.STROKE);
+				
 				p.setAlpha(40);
 				double lat=(punto.getLatitudeE6()/1E6);
-				//Marca Ejemplo 1: Círculo y Texto
-				//canvas.drawCircle(centro.x, centro.y, projection.metersToEquatorPixels(radio), p);
+				
 				canvas.drawCircle(centro.x, centro.y, (float)(mapv.getProjection().metersToEquatorPixels(radio)*(1/Math.cos(Math.toRadians(lat)))), p);
 				
 			

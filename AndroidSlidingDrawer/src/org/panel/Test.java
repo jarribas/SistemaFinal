@@ -35,13 +35,6 @@ import java.util.*;
 import org.panel.ItemizedOverlay;
 import org.panel.MyService;
 import org.panel.ServiceUpdateUIListener;
-
-
-
-//import android.app.Activity;
-import android.content.Intent;
-
-import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 /** 
@@ -82,13 +75,11 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 				   v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				   btnSatelite = (Button)findViewById(R.id.BtnSatelite); 
 				   btnSalir = (Button)findViewById(R.id.BtnSalir); 
- 
-					
-			        
+ 			
+		        
 			       mapView = (MapView) findViewById(R.id.mapview);
-			        //mapView.setBuiltInZoomControls(true);
-			        
-			        mc = mapView.getController();
+			      
+			       mc = mapView.getController();
 			         
 			        ZoomControls zoomControls = (ZoomControls) findViewById(R.id.zoomControlsMain);
 			        zoomControls.setOnZoomInClickListener(new View.OnClickListener() {
@@ -125,7 +116,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			        mc.setZoom(zoomLevel);
 			        
 			        mapOverlays = mapView.getOverlays();
-			        //mapOverlays.clear();
+			       
 			        drawable = this.getResources().getDrawable(R.drawable.androidmarker);
 			        itemizedOverlay = new ItemizedOverlay(drawable);
 			
@@ -134,7 +125,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			        mapOverlays.clear();
 			        mapOverlays.add(itemizedOverlay);
 			        dibujarRadio();
-			        contexto = mapView.getContext(); //sin uso	        
+			        contexto = mapView.getContext();         
 			        MyService.setUpdateListener(this);
 			        startService();
 			        
@@ -245,13 +236,6 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 			
 			dibujarRadio();
 			calculateDistance(la, lo);
-			
-			
-			
-	 /*
-	        Toast toast = Toast.makeText(contexto, msg, Toast.LENGTH_SHORT);
-	        toast.show();
-	        */
 		}
 		
 		private void startService() {
@@ -286,8 +270,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 		                
 		                StringTokenizer tokenizer= new StringTokenizer(linea, " ");
 		                while (tokenizer.hasMoreTokens()){
-		                	//palabra = tokenizer.nextToken();
-		                	//System.out.println("palabra:"+palabra);
+		                	
 		                	if(i==0){  
 		                		palabra = tokenizer.nextToken();
 		                		System.out.println("palabra i 0:"+palabra);
@@ -356,8 +339,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	                
 	                StringTokenizer tokenizer= new StringTokenizer(linea, " ");
 	                while (tokenizer.hasMoreTokens()){
-	                	//palabra = tokenizer.nextToken();
-	                	//System.out.println("palabra:"+palabra);
+	                	
 	                	if(i==0){  
 	                		palabra = tokenizer.nextToken();
 	                		System.out.println("palabra i 0:"+palabra);
@@ -387,9 +369,7 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	    	double dist = 0.0;
 	    	double latVal2 = la/(double)1E6;
 	    	double latVal1 = lat_centro/(double)1E6;
-	    	//double latVal1 = 43270612/(double)1E6;
 			double deltaLat = Math.toRadians(latVal2 - latVal1);
-			//double lonVal1 = -2496943/(double)1E6;
 			double lonVal1 = lon_centro/(double)1E6;
 			double lonVal2 = lo/(double)1E6;
 			double deltaLon = Math.toRadians(lonVal2 - lonVal1);
@@ -403,10 +383,6 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 	(deltaLon/2);
 	         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 	         dist = earthRadius * c;
-	         
-	         /*String msg = "R"+lat_centro" - " "lon_centro"+lon_centro" - " "radio"+rad";
-			 Log.d(" ", msg);*/
-	         
 	    	String msg = "Distancia: " + dist;
 			 Log.d("Monitor: ", msg);
 			 Log.d("Monitor: ", String.valueOf(rad));
@@ -421,29 +397,21 @@ public class Test extends MapActivity implements ServiceUpdateUIListener{
 				 //alertRegister();
 			 }
 			 
-			    /*Toast toast = Toast.makeText(mapView.getContext(), msg, Toast.LENGTH_SHORT);
-			    toast.show();*/
- 
-	      }  
+		}  
 	     
-	   /* protected void onResume()
-		{
-		   super.onResume();
-		  // mapOverlays.remove(mapOverlays.size());
-		   dibujarRadio();
-		}*/
-		/*private void alertRegister(){
+	 
+		
+		 
+		/* Para hacer uso de las alertas
+		 * private void alertRegister(){
 			notificationMgr =(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 			displayNotificationMessage("Mensaje del Localizador");
 		}
 		private void displayNotificationMessage(String message)
 		{
 			Notification notification = new Notification(R.drawable.note, message, System.currentTimeMillis());
-	
 			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new  Intent(this, Test.class), 0);
-	
 			notification.setLatestEventInfo(this, "Vigilado esta fuera del area de alcance", message, contentIntent);
-	
 			notificationMgr.notify(R.string.hello, notification);
 		}*/
 		

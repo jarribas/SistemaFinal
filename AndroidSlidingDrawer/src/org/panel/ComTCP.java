@@ -28,14 +28,12 @@ public class ComTCP implements InterfaceCommPulsera {
 	ServerSocket ss = null; 
 	Socket sckt = null;
 	String IP = "";
-	//int port = 5554;
 	int port = 8080;
 	long ack;
 	String[] coordenadas;
 	String inMsg;
 	int la = 43269612,lo = -2496943;
-	//int la = 0,lo = 0;
-	int dentro=0;
+	
 	
 	 String latitud;
      String longitud;
@@ -71,37 +69,22 @@ public class ComTCP implements InterfaceCommPulsera {
 
 	public Posicion updateCoordenadas() {
 		Posicion pos = new Posicion();
-		//Log.d("Server", "updateCoordenadas");
-		//while (true){	
+		
 			try{ 
-				//Log.d("Server", "bloqueado");
-		    	   // Esperamos a que alguien se conecte a nuestro Socket
-				
 				
 				if(sckt==null){
 					
 		    	  	sckt = ss.accept(); 
 		    	  	 pos.setLat(la);
 					 pos.setLon(lo);
-		    	  // Log.d("Server", "conexaceptada");
+		    	 
 				}else{
-					
-			  
-					
-					
-					
-					
-		    	   // Extraemos los Streams de entrada y de salida 
-		    	   //DataInputStream dis = new DataInputStream(sckt.getInputStream()); 
-		    	   //DataOutputStream dos = new DataOutputStream(sckt.getOutputStream()); 
+
 		    	 
 		    	   
 				 BufferedReader input = new BufferedReader(new InputStreamReader(sckt.getInputStream()));
-                 PrintWriter output = new PrintWriter(new OutputStreamWriter(sckt.getOutputStream()));
-				
-                
-				
-		    	   // Leemos datos de la peticion 
+                 //PrintWriter output = new PrintWriter(new OutputStreamWriter(sckt.getOutputStream()));
+
                 inMsg = input.readLine();
                 coordenadas=inMsg.split(",");               
                 
@@ -110,45 +93,23 @@ public class ComTCP implements InterfaceCommPulsera {
                 lo = Integer.parseInt(coordenadas[1]);  
                
                 }
-                	 
-                
-                
+
                 pos.setLat(la);
 			    pos.setLon(lo);
-				//la=dis.readInt();
-				//lo=dis.readInt();
-		    	  //la = la - 5000;
-				 // lo = lo + 5000;	 
-				 
-			     
-			   //Log.d("lat", String.valueOf(la));
-			   //Log.d("lon", String.valueOf(lo));
-			   
-		    	   // Calculamos resultado 
-		    	   ack = 1;
-		    	    	   
-		    	   // Escribimos el resultado 
-		    	 
-		    	  // dos.writeLong(ack); 
-		    	   // Cerramos los streams 
-		    	 //dis.close(); 
-		    	  // dos.close(); 
 					}
 					
 				
-		    	   }//end try
+		    	   }
 		    		 catch(Exception e)
 		    		 { 
 		    			 
 		    			 pos.setLat(la);
 						 pos.setLon(lo);
 						 sckt=null;
-						 
-						 
-		    			//tost("Se ha producido la excepcion : " +e); 
+						
 		    		 }
 	    	  return pos;
-		  //}		
+		  	
 	}
 
 	public void stopServer() {

@@ -27,7 +27,7 @@ public class ComunicacionFacade {
 
 		com.startServer();
 	}
-
+ 
 	
 	public Posicion updateCoordenadas() {
 

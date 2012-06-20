@@ -43,7 +43,7 @@ public class Historial extends Activity {
             try {
                 InputStreamReader archivo=new InputStreamReader(openFileInput("Historial.txt"));
                 BufferedReader br=new BufferedReader(archivo);
-               // while ((br.readLine())!=null) {
+              
                 	if(kont==0){
                 		etNombre.setText(br.readLine());
                 		kont++;
@@ -61,17 +61,13 @@ public class Historial extends Activity {
                 		kont++;
                 	}
                 	
-                	//}
-               // String linea=br.readLine();
                 
-                //etBody2.setText(etBody.getText());
-                //etBody2.setText(linea);
-                
+
             } catch (IOException e)
             {
             }
         
-		//String("Nombre: "+etNombre.getText().toString()+"\r\nSexo: "+etSexo.getText().toString()+"Direccion: \r\n"+etDireccion.getText().toString()+"Historial Medico: \r\n"+etBody.getText().toString());
+		
 
 
         btnSend.setOnClickListener(new OnClickListener() {                     
@@ -84,16 +80,6 @@ public class Historial extends Activity {
 				                startActivity(intent);
 							}
                 });
-       /* btnRuta.setOnClickListener(new OnClickListener() {                     
-			
-			public void onClick(View v) {
-				
- 
-				Intent intent = new Intent(Historial.this, RoutePath.class);
-				
-                startActivity(intent);
-			}
-});*/
 
     }
     

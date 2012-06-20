@@ -40,7 +40,7 @@ public class MyService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		Log.d("", "dentro de onCreate de service");
-		//startServer();
+		
 		fac.startServer();
 		_startService();
 	}
@@ -59,16 +59,13 @@ public class MyService extends Service {
 			new TimerTask() {
 				public void run() {
 					
-					//fac.startServer();
+					
 					Posicion pos= fac.updateCoordenadas();
 					la=pos.getLat();
 					lo=pos.getLon();
-					
-					//la = la - 5000;
-					//lo = lo + 5000;	
+						
 					Log.d("Lat", Integer.toString(la));
 					Log.d("Lon", Integer.toString(lo));
-					//updateCoordenadas();
 					Log.d("", "service running");
 					handler.sendEmptyMessage(0);
 				}

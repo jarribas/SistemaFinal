@@ -53,7 +53,6 @@ public class Ultima extends MapActivity {
 		List<Overlay> mapOverlays;
 		Drawable drawable;
 	    ItemizedOverlay itemizedOverlay;
-		//private MapItemizedOverlay itemizedOverlay;
 		TextView text;
 
 		MapController mc;
@@ -67,9 +66,6 @@ public class Ultima extends MapActivity {
 	        mapView = (MapView) findViewById(R.id.mapview_3);
 	       
 	        text = (TextView) findViewById(R.id.last_dir);
-	        //mapView.setBuiltInZoomControls(true);
-	        
-	        
 	        mc = mapView.getController();
 	        
 	        
@@ -130,16 +126,9 @@ public class Ultima extends MapActivity {
 	        mc.animateTo(point);
 	        
 	        mapOverlays = mapView.getOverlays();
-	        //mapOverlays.clear();
 	        drawable = this.getResources().getDrawable(R.drawable.androidmarker);
-	        //itemizedOverlay = new MapItemizedOverlay(drawable, this, 30);
-	       itemizedOverlay = new ItemizedOverlay(drawable);
-
+	       itemizedOverlay = new ItemizedOverlay(drawable);     
 	        
-	        
-	        
-	        
-      
 	        Geocoder geoCoder = new Geocoder(
                     getBaseContext(), Locale.getDefault());
 	        
@@ -157,104 +146,20 @@ public class Ultima extends MapActivity {
                 }
                 
                 
-               /* mapView.getManager().addMapLocation(new MapLocation(mMapView,
-                		"Prueba para poner un texto en un mapa",
-                		point, MapLocation.TYPE_BUBBLE));*/
-                
                 OverlayItem overlayitem = new OverlayItem(point, "" , "");
     			itemizedOverlay.addOverlay(overlayitem);
     	        mapOverlays.clear();
     	        mapOverlays.add(itemizedOverlay);
                 
     	        text.setText(add);
-    	        
-    	        
-                
-    	       /* final Toast tag = Toast.makeText(getBaseContext(), add, Toast.LENGTH_LONG);
-
-    	        tag.show();
-
-    	        
-    	        new CountDownTimer(9000, 1000)
-    	        {
-
-    	            public void onTick(long millisUntilFinished) {tag.show();}
-    	            public void onFinish() {tag.show();}
-
-    	        }.start();*/
-
-                
-                //Toast.makeText(getBaseContext(), add, Toast.LENGTH_SHORT).show();
-               /* AlertDialog.Builder dialog = new AlertDialog.Builder(getBaseContext()); 
-                dialog.setTitle("");
-                dialog.setMessage("");
-                dialog.show();*/
-                //mapView.invalidate();
-                
+    	   
             }
             catch (IOException e) {                
                 e.printStackTrace();
             }   
-	        
-	        
-	        /*OverlayItem overlayitem = new OverlayItem(point, "", "");
-			itemizedOverlay.addOverlay(overlayitem);
-	        mapOverlays.clear();
-	        mapOverlays.add(itemizedOverlay);*/
-	        
-	        
-	       /* String address = getAddress(ul_lat,ul_lon);  
-            Toast.makeText(this.getBaseContext(), address, Toast.LENGTH_SHORT).show();*/  
-            //.getMapView().invalidate();  
-            /*Toast toast = Toast.makeText(contexto, msg, Toast.LENGTH_SHORT);
-    	    toast.show();*/
-	        
+	      
 	    }
 	    
-	   /* public static String getAddress(double lat, double lng) {  
-	        JSONObject jsonObject = getLocationInfo(lat, lng);  
-	        String address = "Lugar desconocido";  
-	        try {  
-	            address = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getString("formatted_address");  
-	        } catch (JSONException e) {  
-	            e.printStackTrace();  
-	        }  
-	        return address;  
-	    }  
-	    
-	    private static JSONObject getLocationInfo(double lat, double lng) {  
-	        HttpGet httpGet = new HttpGet("http://maps.google.com"  
-	                + "/maps/api/geocode/json?latlng=" + lat + "," + lng  
-	                + "&sensor=false");  
-	        return getLocation(httpGet);  
-	    }  
-	    
-	    private static JSONObject getLocation(HttpGet httpGet) {  
-	        HttpClient client = new DefaultHttpClient();  
-	        HttpResponse response;  
-	        StringBuilder stringBuilder = new StringBuilder();  
-	        try {  
-	            response = client.execute(httpGet);  
-	            HttpEntity entity = response.getEntity();  
-	            InputStream stream = entity.getContent();  
-	            int b;  
-	            while ((b = stream.read()) != -1) {  
-	                stringBuilder.append((char) b);  
-	            }  
-	        } catch (ClientProtocolException e) {  
-	        } catch (IOException e) {  
-	        }  
-	        JSONObject jsonObject = new JSONObject();  
-	        try {  
-	            jsonObject = new JSONObject(stringBuilder.toString());  
-	        } catch (JSONException e) {  
-	            e.printStackTrace();  
-	        }  
-	        return jsonObject;  
-	    }  
-	    protected boolean isRouteDisplayed() {
-	        return false;
-	    }*/
 	    /**
 	     * Metodo que busca un archivo en el sistema de ficheros del móvil.
 	     * @param archivos Los archivos del móvil.

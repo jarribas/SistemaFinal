@@ -38,10 +38,7 @@ public class Primero extends MapActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.primero);
         mapView = (MapView) findViewById(R.id.mapview_2);
-        
-        //mapView.setBuiltInZoomControls(true);
-        
-       
+    
         mc = mapView.getController();
         
         ZoomControls zoomControls = (ZoomControls) findViewById(R.id.zoomControls1);
@@ -62,7 +59,7 @@ public class Primero extends MapActivity {
         
         
         mapOverlays = mapView.getOverlays();
-        //mapOverlays.clear();
+ 
         drawable = this.getResources().getDrawable(R.drawable.androidmarker);
         itemizedOverlay = new ItemizedOverlay(drawable);
 

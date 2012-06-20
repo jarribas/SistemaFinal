@@ -167,7 +167,7 @@ public class Panel extends LinearLayout
 										// dispatchDraw()
 										// to see if is equal to ABOUT_TO_ANIMATE
 										mContent.setVisibility(VISIBLE);
-									}
+									} 
 								post(startAnimation);
 							}
 						else

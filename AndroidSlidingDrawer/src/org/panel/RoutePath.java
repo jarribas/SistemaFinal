@@ -1,7 +1,4 @@
-/*
- * Read more: http://csie-tw.blogspot.com/2009/06/android-driving-direction-route-path.html
- *
- */
+
 
 package org.panel;
 

@@ -1,7 +1,3 @@
-/*
- * Read more: http://csie-tw.blogspot.com/2009/06/android-driving-direction-route-path.html
- *
- */
 
 package org.panel;
 
@@ -150,7 +146,7 @@ public class MyOverLay extends Overlay
         paint.setAntiAlias(true); 
         canvas.drawBitmap(img, point2.x, point2.y,paint);      
         canvas.drawText(this.text, point2.x, point2.y, paint);
-    //    Log.d(TAG, "Draw the text="+this.text+ " at point="+point2.x + "," + point2.y);
+
       }
       
       else if(mode==5)
@@ -166,10 +162,7 @@ public class MyOverLay extends Overlay
         paint.setTextSize(20);
         paint.setAntiAlias(true); 
         canvas.drawBitmap(img, point2.x, point2.y,paint);
-    
-      
-        
-    //    Log.d(TAG, "Draw the text="+this.text+ " at point="+point2.x + "," + point2.y);
+
       }
       
       
