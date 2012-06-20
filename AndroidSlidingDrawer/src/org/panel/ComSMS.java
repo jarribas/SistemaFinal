@@ -29,7 +29,7 @@ public class ComSMS implements InterfaceCommPulsera  {
 			return pos;
 		}
 
-
+ 
 		public void stopServer() {
 
 			
